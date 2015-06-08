@@ -1,0 +1,46 @@
+ul#nomeempresa { 
+    margin: 0; /* retira o recuo para alguns browsers */ (*)
+    padding:0; /* retira o recuo para outros browsers */ (*)
+    list-style-type: none; /* retira o marcador de listas*/ 
+    background-color: #9AEA8E; /* cor do fundo */ 
+    height: 70px;
+}
+
+a.menuheader { 
+    text-decoration:none;
+    color: white;
+    font-size: 50px;
+    alignment-adjust: auto;
+    alignment-baseline: middle;
+    font-family: serif;
+    text-align: center; 
+}
+
+p#menuheader {
+    text-align: center;
+} 
+
+.rodape {
+   z-index: 10;
+   width:100%;
+   height:30px;   
+   background: #9AEA8E;
+}
+
+p#footer {
+    color: black;
+    font-size: 14px;
+    text-align: right;
+    font-family: cursive;
+    text-shadow: white;
+}
+
+fieldset#co2 {
+    background-color: #9AEA8E; 
+    alignment-adjust: middle; 
+    padding: 5px; margin: 3px; 
+    border: 3px double; 
+    border-radius: 1em; width: 1000px; 
+    height: auto;
+}
+

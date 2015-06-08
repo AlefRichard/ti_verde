@@ -1,0 +1,32 @@
+# CI ENV
+SetEnv CI_ENV development
+
+# Charset
+AddDefaultCharset utf-8
+
+# Rewrite Mod
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond $1 !(index\.php|robots\.txt|favicon\.ico)|\.(css|js|png|gif|jpg|jpeg|swf|pdf|woff|ttf|otf|eot|svg) [NC]
+    RewriteRule ^(.*)$ index.php?/$1 [L]
+</IfModule>
+
+# Filter/Deflate Mod
+<IfModule mod_filter.c>
+    <IfModule mod_deflate.c>
+        AddOutputFilterByType DEFLATE text/html text/plain text/xml
+        <FilesMatch "\.(js|css)$">
+            SetOutputFilter DEFLATE
+        </FilesMatch>
+    </IfModule>
+</IfModule>
+
+# Headers Mod
+<IfModule mod_headers.c>
+    <FilesMatch "\.(js|css)$">
+        Header set Cache-Control "max-age=432000, proxy-revalidate"
+    </FilesMatch>
+    <FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
+        Header set Cache-Control "max-age=604800, public"
+    </FilesMatch>
+</IfModule>
